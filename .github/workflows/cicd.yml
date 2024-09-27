@@ -9,10 +9,17 @@ on:
 permissions:
   contents: read
 
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: github
+      - uses: actions/checkout@v3
+      - name: directory
+        run: |
+          ls -a
       - name: test1
         run: |
           echo "test1 출력"
@@ -22,3 +29,4 @@ jobs:
       - name: test3
         run: |
           echo "test3 출력"
+    

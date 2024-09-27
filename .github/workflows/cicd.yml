@@ -22,7 +22,7 @@ jobs:
           
       - name: Build SpringBoot Server
         run: |
-          echo "test입니다." > aaa.txt
+          echo ${{ secrets.APPLICATION_SECRET }} | base64 --decode > ./src/main/resources/application-secret.yml
           chmod 700 ./mvnw
           ./mvnw clean package -Dtestskip
 

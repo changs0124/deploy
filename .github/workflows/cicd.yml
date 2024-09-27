@@ -18,7 +18,7 @@ jobs:
           echo "test1 출력"
       - name: test2
         run: |
-          ehco "test2 출력"
+          echo "test2 출력"
       - name: test3
         run: |
           echo "test3 출력"

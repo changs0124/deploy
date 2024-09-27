@@ -15,9 +15,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: github
       - uses: actions/checkout@v3
-      - name: directory
+      - name: show directory
         run: |
           ls -a
       - name: test1

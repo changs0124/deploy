@@ -16,9 +16,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install JDK 11
+        uses: actions/setup_java@3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          
+      - name: show JDK Version
+        run: |
+          java --version
+          
       - name: show directory
         run: |
           ls -a
+          
       - name: test1
         run: |
           echo "test1 출력"

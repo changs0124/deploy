@@ -9,8 +9,6 @@ on:
 permissions:
   contents: read
 
-
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,21 +20,13 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           
-      - name: show JDK Version
+      - name: Build SpringBoot
         run: |
-          java --version
+          chmod 700 ./mvnw
+          ./mvnw clean package -Dtestskip
           
       - name: show directory
         run: |
           ls -a
-          
-      - name: test1
-        run: |
-          echo "test1 출력"
-      - name: test2
-        run: |
-          echo "test2 출력"
-      - name: test3
-        run: |
-          echo "test3 출력"
-    
+          cd ./target
+          ls -a
